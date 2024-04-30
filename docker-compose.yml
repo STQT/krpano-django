@@ -43,3 +43,5 @@ volumes:
   postgres_data:
   static_volume:
   media_volume:
+  krpano-1.21.2:
+    external: true
