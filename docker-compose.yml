@@ -1,0 +1,44 @@
+version: "3"
+
+services:
+  postgres-db:
+    restart: always
+    container_name: postgres-db
+    image: postgres:16.1
+    hostname: postgres-db
+    ports:
+      - 127.0.0.1:5433:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      #- PGDATA
+      - POSTGRES_PASSWORD=$DB_USER_PASSWORD
+      - POSTGRES_USER=$DB_USERNAME
+      - POSTGRES_DB=$DB_DATABASE
+      #- POSTGRES_TZ
+    networks:
+      - backend
+
+  backend:
+    restart: always
+    container_name: backend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - 127.0.0.1:8000:80
+    env_file:
+      - .env
+    networks:
+      - backend
+    volumes:
+      - static_volume:/backend/static
+      - media_volume:/backend/media
+
+networks:
+  backend:
+
+volumes:
+  postgres_data:
+  static_volume:
+  media_volume:
