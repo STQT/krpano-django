@@ -34,7 +34,7 @@ services:
     volumes:
       - static_volume:/backend/static
       - media_volume:/backend/media
-      - ./krpano-1.21.2:/krpano-1.21.2
+      - home/elbek/krpano-1.21.2:/krpano-1.21.2
 
 networks:
   backend:
@@ -43,5 +43,3 @@ volumes:
   postgres_data:
   static_volume:
   media_volume:
-  krpano-1.21.2:
-    external: true
