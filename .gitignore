@@ -8,6 +8,8 @@ __pycache__
 images
 static
 media
+/media/
+/static/
 .pytest_cache
 Pipfile
 .DS_Store
