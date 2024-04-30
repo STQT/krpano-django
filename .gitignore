@@ -6,7 +6,7 @@ server.env
 local.env
 __pycache__
 images
-static
+static/
 media
 .pytest_cache
 Pipfile
