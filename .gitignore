@@ -6,8 +6,9 @@ server.env
 local.env
 __pycache__
 images
-static/
+static
 media
+/static
 .pytest_cache
 Pipfile
 .DS_Store
