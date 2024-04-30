@@ -34,7 +34,7 @@ services:
     volumes:
       - static_volume:/backend/static
       - media_volume:/backend/media
-      - ./krpano-1.21.2:/
+      - ./krpano-1.21.2:/krpano-1.21.2
 
 networks:
   backend:
